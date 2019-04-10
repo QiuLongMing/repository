@@ -1,0 +1,26 @@
+server:
+  port: 8001
+
+
+
+
+#对外显示的服务名
+spring:
+    application:
+      name: service-hi
+
+
+#将该服务注册到注册中心上
+eureka:
+    client:
+      serviceUrl:
+        defaultZone: http://localhost:8761/eureka/
+    instance:
+      instance-id: service-hi-8001
+      prefer-ip-address: true #显示服务id
+
+info:
+  app.name: microservicecloud
+  company.name: org.qlm
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$

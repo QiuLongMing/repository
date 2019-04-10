@@ -1,0 +1,24 @@
+server:
+  port: 8080
+
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/permissions
+    username: postgres
+    password: 123456
+    driverClassName: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      dialect: org.hibernate.dialect.PostgreSQL9Dialect
+      ddl-auto: update
+    show-sql: true
+
+
+#在日志中打印sql语句
+logging:
+    level:
+      org.qlm.testmh.mapper: debug
+#      org.qlm.testmh.repository: debug
+

@@ -1,0 +1,13 @@
+
+
+spring:
+  application:
+    name: hadoop
+server:
+  port: 8080
+
+
+hdfs:
+  url: hdfs://192.168.2.68:9000
+  hdfsName: root
+  uploadpath: /input

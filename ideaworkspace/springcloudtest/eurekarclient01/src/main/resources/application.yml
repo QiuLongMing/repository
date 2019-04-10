@@ -1,0 +1,14 @@
+server:
+  port: 8002
+
+#对外显示的服务名
+spring:
+  application:
+    name: service-hi01
+
+
+#将该服务注册到注册中心上
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/

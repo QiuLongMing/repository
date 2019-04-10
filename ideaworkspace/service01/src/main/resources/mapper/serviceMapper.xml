@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="org.qlm.service01.mapper.ServiceMapper">
+    <!-- 建立数据库字段和javabean的属性映射关系 -->
+    <!--字典表bean -->
+    <resultMap type="org.qlm.service01.entity.ServiceBean" id="serviceMap">
+        <result column="SER_ID" property="serId" />
+        <result column="SER_NAME" property="serName" />
+        <result column="SER_OBJ" property="serObj" />
+        <result column="SER_CONTENT" property="serContent" />
+        <result column="SER_MEMO" property="serMemo" />
+
+    </resultMap>
+<!--查询所有服务-->
+    <select id="getService" resultMap="serviceMap">
+        SELECT * FROM service
+    </select>
+
+
+    <!--根据ID删除服务-->
+    <delete id="deleteService">
+
+        delete from service where ser_id=#{serId}
+
+    </delete>
+
+    <!--添加服务-->
+    <insert id="addService">
+
+       INSERT INTO "service" VALUES (#{serId}, #{serName}, #{serObj}, #{serContent}, #{serMemo});
+
+    </insert>
+
+    <!--修改服务-->
+    <update id="updateService">
+
+     update  service set ser_name=#{serName},ser_obj=#{serObj},ser_content=#{serContent},ser_memo=#{serMemo} where ser_id=#{serId}
+
+    </update>
+
+</mapper>

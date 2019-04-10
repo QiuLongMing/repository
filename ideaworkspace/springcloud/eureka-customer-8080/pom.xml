@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!--继承父类依赖-->
+    <parent>
+        <groupId>org.qlm</groupId>
+        <artifactId>springcloud</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <groupId>org.qlm</groupId>
+    <artifactId>eureka-customer-8080</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>eureka-customer-8080</name>
+    <packaging>jar</packaging>
+    <description>Demo project for Spring Boot</description>
+
+
+
+    <dependencies>
+        <!--可以用来生成RESTFUL接口的在线文档，
+而且更牛逼的是可以直接在文档中进行接口测试，代替Postman。
+在Spring Boot工程中，可以引入这两个依赖实现swagger的众多功能-->
+        <!--start-->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>2.9.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>2.9.2</version>
+        </dependency>
+        <!--end-->
+
+
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

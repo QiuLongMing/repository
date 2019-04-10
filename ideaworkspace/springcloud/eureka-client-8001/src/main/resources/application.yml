@@ -1,0 +1,27 @@
+# 端口号
+server:
+  port: 8001
+
+# 服务注册与发现相关配置
+eureka:
+  client:
+    # 服务注册地址
+    serviceUrl:
+      defaultZone: http://eureka8763.com:8763/eureka/,http://eureka8762.com:8762/eureka/,http://eureka8761.com:8761/eureka/
+
+  instance:
+    prefer-ip-address: true
+    instance-id: server-8001
+
+# 服务名称，即serviceId
+spring:
+  application:
+    name: server-lb
+
+#连接数据库
+  datasource:
+    name: test
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/permissions
+    username: postgres
+    password: 123456

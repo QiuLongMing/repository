@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>服务简介</title>
+    <style>
+        .test{
+            text-align: center;
+            margin: 0 auto;
+            height: 500px;
+            width: 600px;
+
+
+        }
+        .layui-table {
+            width: 100%;
+
+        }
+        /*设置表格线条 重合*/
+        table
+        {
+
+            border-collapse:collapse;
+        }
+
+        table,th, td
+        {
+            border: 1px solid black;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div class="test">
+<table class="layui-table">
+    <tr >
+        <td >服务id</td>
+        <td >服务名称</td>
+        <td  th:text="${str}">服务对象</td>
+        <td >服务内容</td>
+        <td >服务备注</td>
+
+    </tr>
+    <tr th:each="user:${ser}" >
+        <td th:text="${user.getSerId()}"></td>
+        <td th:text="${user.getSerName()}"></td>
+        <td th:text="${user.getSerObj()}"></td>
+        <td th:text="${user.getSerContent()}"></td>
+        <td th:text="${user.getSerMemo()}"></td>
+
+    </tr>
+    </table>
+</div>
+
+</body>
+</html>
